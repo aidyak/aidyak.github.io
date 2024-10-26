@@ -26,15 +26,23 @@ import Card from '../components/Card.astro';
 		</svg>
 		<h2><span class="text-gradient">About me</span></h2>
 		<p class="instructions">
-      Hi! I'm Yusei Kaida. I am an engineer at <em>giftee Inc.</em><br />
-      <strong>My Interests:</strong> Ruby, Ruby on Rails, TypeScript, Rust, Architecture.<br />
+      Yusei Kaida. An engineer at <em>giftee Inc.</em><br />
+      With a Master's background in Economics, I'm passionate about exploring new ideas and contributing thoughtfully to each project!<br />
+<strong><a href='/'>Back to Home</a></strong>
 		</p>
     
-		<ul role="list" class="link-card-grid">
+    <ul role="list" class="link-card-grid">
+      <h3>Education</h3><br />
 			<Card
-				title="Education"
-        body="M.A in Economics, Kobe University; B.A in Commerce, Doshisha University"
-			/>
+        title="M.A in Economics"
+        href="https://www.econ.kobe-u.ac.jp/en/"
+        body="2022~2024@Kobe University"
+      /><br />
+      <Card
+        title="B.A in Commerce"
+        href="https://com.doshisha.ac.jp/"
+        body="2018~2022@Doshisha University"
+      />
     </ul>
     
 	</main>
