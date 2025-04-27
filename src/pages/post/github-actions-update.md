@@ -1,5 +1,7 @@
 ---
 layout: ../../layouts/Post.astro 
+author: "aidyak"
+date: "2025-04-27"
 ---
 # GitHub Actionsを更新してなくてポートフォリオサイトが更新できなかった話
 
