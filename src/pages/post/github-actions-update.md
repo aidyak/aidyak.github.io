@@ -42,5 +42,3 @@ jobs:
         uses: actions/deploy-pages@v4
 ```
 更新は忘れないようにしていきたいです。
-```
-```
