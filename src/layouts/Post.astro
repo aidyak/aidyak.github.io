@@ -1,6 +1,6 @@
 ---
 import "../styles/post.css";
-const { date, author } = Astro.props;
+const { frontmatter } = Astro.props;
 
 // 日付を日本語で整形したい場合は下記を利用
 // const formattedDate = new Date(date).toLocaleDateString('ja-JP', { year: 'numeric', month: 'long', day: 'numeric' });
@@ -9,9 +9,9 @@ const { date, author } = Astro.props;
 <article class="post-body">
   <header>
     <p class="post-meta">
-      <span>by {author}</span>
+      <span>by {frontmatter.author}</span>
       <span> | </span>
-      <span>{date}</span>
+      <span>{frontmatter.date}</span>
       {
         /*
       <span>{formattedDate}</span>
