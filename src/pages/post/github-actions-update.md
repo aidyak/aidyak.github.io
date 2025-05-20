@@ -1,17 +1,19 @@
 ---
-layout: ../../layouts/Post.astro 
+layout: ../../layouts/Post.astro
 author: "aidyak"
 date: "2025-04-27"
 ---
-# GitHub Actionsを更新してなくてポートフォリオサイトが更新できなかった話
 
-割ともうそのままの話ですが、ymlを更新してなかったので、GitHub Actionsが動かず、ポートフォリオサイトが更新できていませんでした。
-2025年に公開する話でもないかもですが、せっかくなので記録しておきます。
+# GitHub Actions を更新してなくてポートフォリオサイトが更新できなかった話
 
-## GitHub Actionsの更新
+割ともうそのままの話ですが、yml を更新してなかったので、GitHub Actions が動かず、ポートフォリオサイトが更新できていませんでした。
+2025 年に公開する話でもないかもですが、せっかくなので記録しておきます。
+
+## GitHub Actions の更新
+
 [公式](https://github.blog/changelog/2024-04-16-deprecation-notice-v3-of-the-artifact-actions/)に詳細が載っています。
-2025年1月25日にv3のArtifact Actionsが廃止されるとのことで、それに気づかずpushしても更新されないな？と思っていました。
-Astroを使用してこのサイトは運営しているので、ymlをこんな感じで修正して無事デプロイできました。
+2025 年 1 月 25 日に v3 の Artifact Actions が廃止されるとのことで、それに気づかず push しても更新されないな？と思っていました。
+Astro を使用してこのサイトは運営しているので、yml をこんな感じで修正して無事デプロイできました。
 一部抜粋すると以下のようになっています。
 
 ```yaml
@@ -19,7 +21,7 @@ name: Deploy to GitHub Pages
 
 on:
   push:
-    branches: [ main ]
+    branches: [main]
   workflow_dispatch:
 
 jobs:
@@ -43,4 +45,5 @@ jobs:
         id: deployment
         uses: actions/deploy-pages@v4
 ```
+
 更新は忘れないようにしていきたいです。

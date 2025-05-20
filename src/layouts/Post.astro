@@ -1,26 +1,23 @@
 ---
-import '../styles/post.css';
-const { date, author, title } = Astro.props;
+import "../styles/post.css";
+const { date, author } = Astro.props;
+
+// 日付を日本語で整形したい場合は下記を利用
+// const formattedDate = new Date(date).toLocaleDateString('ja-JP', { year: 'numeric', month: 'long', day: 'numeric' });
 ---
 
-<html lang="ja">
-  <head>
-    <meta charset="UTF-8" />
-    <style><!--
-      /* もし global.css と分けたい場合はここでインラインもOK */
-    --></style>
-  </head>
-  <body>
-    <article class="post-body">
-      <header>
-        <p class="post-meta">
-          <span>by {author}</span>
-          <span> | </span>
-          <span>{date}</span>
-        </p>
-      </header>
-      <slot />
-    </article>
-  </body>
-</html>
-
+<article class="post-body">
+  <header>
+    <p class="post-meta">
+      <span>by {author}</span>
+      <span> | </span>
+      <span>{date}</span>
+      {
+        /*
+      <span>{formattedDate}</span>
+      */
+      }
+    </p>
+  </header>
+  <slot />
+</article>
