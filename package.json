@@ -10,8 +10,10 @@
     "astro": "astro"
   },
   "dependencies": {
-    "astro": "^4.16.7",
     "@astrojs/check": "^0.9.4",
-    "typescript": "^5.6.3"
+    "@giftee/abukuma-css": "^3.0.5",
+    "astro": "^4.16.7",
+    "typescript": "^5.6.3",
+    "unist-util-visit": "^5.0.0"
   }
 }
