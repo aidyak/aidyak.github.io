@@ -20,7 +20,7 @@ jobs:
       - name: Install, Build and Upload
         uses: withastro/action@v4
         with:
-          version: latest
+          package-manager: pnpm@9.15.4
 
   deploy:
     needs: build
