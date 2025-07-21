@@ -21,7 +21,6 @@ jobs:
         uses: withastro/action@v4
         with:
           version: latest
-          packageManager: pnpm@9.15.4
 
   deploy:
     needs: build
