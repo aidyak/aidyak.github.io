@@ -9,30 +9,41 @@ import Header from "../components/Header.astro";
   <main>
     <h2><span class="text-gradient">aidyak Website</span></h2>
     <p class="instructions">
-      Welcome to my website! I'm Yusei Kaida. I am an engineer at <em
-        >giftee Inc.</em
-      ><br />
-      More information <a href="/about">about me</a><br />
-      Blog は <a href="https://aidyak.github.io/ink" target="_blank" rel="noopener noreferrer">Ink</a> で更新しています。<br />
-      <strong>My Interests:</strong> Ruby, Ruby on Rails, TypeScript, Rust, and Architecture.<br
-      />
+      <span class="lang-en">
+        Welcome to my website! I'm Yusei Kaida, an engineer at <em>giftee Inc.</em>.<br />
+        More information <a href="/about">about me</a>.<br />
+        Blog updates live on <a href="https://aidyak.github.io/ink" target="_blank" rel="noopener noreferrer">Ink</a>.<br />
+        <strong>My Interests:</strong> Ruby, Ruby on Rails, TypeScript, Rust, and Architecture.<br />
+      </span>
+      <span class="lang-ja">
+        Welcome to my website! I'm Yusei Kaida, an engineer at <em>giftee Inc.</em>.<br />
+        More information <a href="/about">about me</a>.<br />
+        Blog updates live on <a href="https://aidyak.github.io/ink" target="_blank" rel="noopener noreferrer">Ink</a>.<br />
+        <strong>My Interests:</strong> Ruby, Ruby on Rails, TypeScript, Rust, and Architecture.<br />
+      </span>
     </p>
     <ul role="list" class="link-card-grid">
       <Card
         href="https://x.com/aidyak_"
         title="X"
-        body="This is my X account. Please follow me!"
-      />
+      >
+        <span slot="body" class="lang-en">This is my X account. Please follow me!</span>
+        <span slot="body" class="lang-ja">X アカウントです。</span>
+      </Card>
       <Card
         href="https://github.com/aidyak"
         title="Github"
-        body="This is my Github account."
-      />
+      >
+        <span slot="body" class="lang-en">This is my GitHub account.</span>
+        <span slot="body" class="lang-ja">GitHub アカウントはこちら。</span>
+      </Card>
       <Card
         href="https://aidyak.github.io/ink"
-        title="Blog (Ink)"
-        body="外部ブログ Ink で記事を公開しています。"
-      />
+        title="Blog"
+      >
+        <span slot="body" class="lang-en">Writing about various things.</span>
+        <span slot="body" class="lang-ja">雑多に書いています。</span>
+      </Card>
     </ul>
   </main>
 </Layout>

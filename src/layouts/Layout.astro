@@ -39,6 +39,12 @@ const { title } = Astro.props;
 		background: var(--bg-dark);
 		color: var(--text-dark);
 	}
+	html[data-lang="en"] .lang-ja {
+		display: none !important;
+	}
+	html[data-lang="ja"] .lang-en {
+		display: none !important;
+	}
 	code {
 		font-family:
 			Menlo,

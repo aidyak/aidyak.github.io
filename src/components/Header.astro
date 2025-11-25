@@ -26,6 +26,10 @@ const { title, description } = Astro.props;
       </a>
     </div>
     <div class="header-right">
+      <button id="lang-toggle" class="lang-toggle" aria-label="言語切り替え">
+        <span class="lang-label lang-en">EN</span>
+        <span class="lang-label lang-ja">日本語</span>
+      </button>
       <a
         href="https://github.com/aidyak"
         target="_blank"
@@ -56,16 +60,27 @@ const { title, description } = Astro.props;
 
 <script>
   const themeToggle = document.getElementById("theme-toggle");
+  const langToggle = document.getElementById("lang-toggle");
   const html = document.documentElement;
 
   const savedTheme = localStorage.getItem("theme");
   html.setAttribute("data-theme", savedTheme || "dark");
+
+  const savedLang = localStorage.getItem("lang");
+  html.setAttribute("data-lang", savedLang || "en");
 
   themeToggle?.addEventListener("click", () => {
     const currentTheme = html.getAttribute("data-theme");
     const newTheme = currentTheme === "dark" ? "light" : "dark";
     html.setAttribute("data-theme", newTheme);
     localStorage.setItem("theme", newTheme);
+  });
+
+  langToggle?.addEventListener("click", () => {
+    const currentLang = html.getAttribute("data-lang");
+    const newLang = currentLang === "ja" ? "en" : "ja";
+    html.setAttribute("data-lang", newLang);
+    localStorage.setItem("lang", newLang);
   });
 </script>
 
@@ -138,6 +153,37 @@ const { title, description } = Astro.props;
   .github-icon {
     width: 1.5rem;
     height: 1.5rem;
+  }
+
+  .lang-toggle {
+    background: none;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    cursor: pointer;
+    padding: 0.4rem 0.65rem;
+    border-radius: 0.6rem;
+    color: rgba(255, 255, 255, 0.9);
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    gap: 0.35rem;
+    font-weight: 700;
+    letter-spacing: 0.02em;
+    background: rgba(255, 255, 255, 0.06);
+  }
+
+  .lang-toggle:hover {
+    border-color: rgba(255, 255, 255, 0.4);
+    background: rgba(255, 255, 255, 0.1);
+    color: rgb(255, 165, 0);
+  }
+
+  .lang-toggle .lang-label {
+    font-size: 0.9rem;
+  }
+
+  html[data-lang="en"] .lang-toggle .lang-ja,
+  html[data-lang="ja"] .lang-toggle .lang-en {
+    opacity: 0.45;
   }
 
   .theme-toggle {
