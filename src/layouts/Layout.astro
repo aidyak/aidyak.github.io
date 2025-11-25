@@ -31,10 +31,13 @@ const { title } = Astro.props;
 			rgb(var(--accent-light)) 30%,
 			white 60%
 		);
+		--bg-dark: #1e1f23; /* 深い黒から少し外したグレートーン */
+		--text-dark: #e9eaed;
 	}
 	html {
 		font-family: system-ui, sans-serif;
-		background: #13151a;
+		background: var(--bg-dark);
+		color: var(--text-dark);
 	}
 	code {
 		font-family:
